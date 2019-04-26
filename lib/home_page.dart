@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do/fetch_data.dart';
 import 'package:to_do/todo_page.dart';
 import 'package:to_do/user_card.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'globals.dart' as globals;
 
 class HomePage extends StatefulWidget {
@@ -71,7 +72,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 100),
+              height: 100,
+            ),
+            Container(
+              height: 100,
+              child: FlareActor(
+                "assets/anim.flr",
+                alignment: Alignment.center,
+                fit: BoxFit.contain,
+                animation: "checkAnimation"
+              )
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 0),
               child: Center(
                 child: ScaleTransition(
                   scale: animation,
@@ -82,7 +95,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       fontFamily: 'Kristi',
                       fontSize: 70.0
                     )
-                  )
+                  ),
                 )
               )
             ),
